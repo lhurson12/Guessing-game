@@ -1,0 +1,24 @@
+#Guess my Number
+import sys
+import random
+#The computer picks a random number
+number = random.randint(1,100)
+count = 0
+#The players tries to guess it and the computer lets
+guess = int(input("Guess what number I'm thinking of? It's between 1 and 100 "))
+while count<9:
+    count += 1
+#the player know if the number is too high,
+    if guess<number:
+        print("Too low. Guess again?")
+#too low,
+    elif guess>number:
+        print("Too high. Guess again? ")
+#or right on the money
+    elif guess == number:
+        print("BINGO! You got it!")
+        break
+    guess = int(input())
+#Message for a user with poor guessing skills
+if count == 9:
+        print("10 guesses... Yikes... Better luck next time")
